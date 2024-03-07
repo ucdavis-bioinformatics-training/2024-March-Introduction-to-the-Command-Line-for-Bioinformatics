@@ -147,7 +147,7 @@ Now that we have a way to get just the headers, we need to isolate the part of t
 
 So we are using the "-d" option to cut with ":" as the argument to that option, meaning that we will be using the delimiter ":" to split the input. Then we use the "-f" option with argument "10", meaning that we want the 10th field after the split. In this case, that is the barcode.
 
-Finally, as before, we need to sort the data and then use "uniq -c" to count. Then put it all together and run it on the entire dataset (This will take about a minute to run):
+Finally, as before, we need to sort the data and then use "uniq -c" to count. Then put it all together and run it on the entire dataset:
 
     zcat C61.subset.fq.gz | sed -n '1~4p' | cut -d: -f10 | sort | uniq -c
 
